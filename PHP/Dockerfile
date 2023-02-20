@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
     wget \
     git
 
-ADD php.ini /usr/local/etc/php/conf.d/40-custom.ini
+COPY php.ini /usr/local/etc/php/conf.d/40-custom.ini
+COPY src/devlabs.server /var/www/devlabs.server
 
 WORKDIR /var/www/devlabs
 
